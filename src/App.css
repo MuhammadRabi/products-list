@@ -91,3 +91,18 @@ form input[type="submit"]:hover{
     font-size: 18px;
     border: 2px solid #08080833;
 }
+
+
+
+.counter{
+    width: 90%;
+    padding:5px 10px;
+    display:flex;
+    align-items:center;
+}
+
+.counter svg{
+    cursor:pointer;
+    width:50%;
+
+}
