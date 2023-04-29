@@ -1,20 +1,17 @@
-import QuantityCounter from "../QuantityCounter";
+import SingleItem from "./SingleItem";
 
-const Items = (props) => {
-  const { items, del } = props;
-
+const Items = ({ items, del, increaseGrandTotal, decreaseGrandTotal }) => {
   let length = items.length;
   const ListItem = length ? (
     items.map((item) => {
       return (
-        <div key={item.id} className="item">
-          <p>{item.product}</p>
-          <p>{item.price}</p>
-          <p className="delete" onClick={() => del(item.id)}>
-            &times;
-          </p>
-          <QuantityCounter />
-        </div>
+        <SingleItem
+          key={item.id}
+          {...item}
+          del={del}
+          increaseGrandTotal={increaseGrandTotal}
+          decreaseGrandTotal={decreaseGrandTotal}
+        />
       );
     })
   ) : (
@@ -27,6 +24,7 @@ const Items = (props) => {
         <p>Price</p>
         <p>Edit</p>
         <p>Quantity</p>
+        <p>Subtotal</p>
       </div>
       {ListItem}
     </div>
