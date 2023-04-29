@@ -19,9 +19,10 @@ const App = () => {
     setGrandTotal(grandTotal + price);
   };
 
-  const deleteItem = (id) => {
+  const deleteItem = (id, subTotal) => {
     const updatedItems = items.filter((item) => item.id !== id);
     setItems(updatedItems);
+    decreaseGrandTotal(subTotal);
   };
 
   const addItem = (item) => {

@@ -25,7 +25,7 @@ const SingleItem = ({
     <div className="item">
       <p>{product}</p>
       <p>{price}</p>
-      <p className="delete" onClick={() => del(id)}>
+      <p className="delete" onClick={() => del(id, itemSubtotal)}>
         &times;
       </p>
       <QuantityCounter
